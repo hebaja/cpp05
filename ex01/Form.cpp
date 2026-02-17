@@ -3,6 +3,8 @@
 
 Form::Form(std::string name, int grade_sign, int grade_exec) : name(name), is_signed(false), grade_sign(grade_sign), grade_exec(grade_exec) {}
 
+Form::Form() : name("Default"), is_signed(false), grade_sign(150), grade_exec(150) {}
+
 Form::~Form(){}
 
 Form::Form(const Form &f) : name(f.name), is_signed(f.is_signed), grade_sign(f.grade_sign), grade_exec(f.grade_exec){}

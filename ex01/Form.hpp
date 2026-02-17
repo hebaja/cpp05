@@ -16,6 +16,7 @@ class Form
 
 	public:
 		Form(std::string name, int grade_sign, int grade_exec);
+		Form();
 		~Form();
 		Form(const Form &f);
 		Form &operator=(const Form &f);
