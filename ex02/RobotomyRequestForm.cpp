@@ -24,7 +24,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	std::cout << "drrrr-drrrr-drrrr-drrrr-drrrr-drrrr" << std::endl;
 	std::srand(std::time(0)); //TODO need to check if it's necessary in other cpp versions
 	if (std::rand() % 2 == 0)
-		std::cout << executor.getName() << " was successfully robotomized!" << std::endl;
+		std::cout << executor.getName() << " has been successfully robotomized!" << std::endl;
 	else
 		std::cout << executor.getName() << " could not be robotomized this time. Try again." << std::endl;
 

@@ -5,7 +5,6 @@
 
 int	main()
 {
-	/*
 	{
 		try {
 			Bureaucrat a("Warrel", 135);
@@ -16,7 +15,6 @@ int	main()
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 	}
-	*/
 	/*
 	{
 		try {
@@ -29,6 +27,7 @@ int	main()
 		}
 	}
 	*/
+	/*
 	{
 		try {
 			Bureaucrat a("Foo", 4);
@@ -39,5 +38,6 @@ int	main()
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 	}
+	*/
 	return (0);
 }
