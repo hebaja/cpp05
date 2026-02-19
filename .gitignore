@@ -1,3 +1,6 @@
 *.o
 *.out
 *.a
+**/Bureacrat
+ex02/tree_shrubbery
+ex03/little_planet_shrubbery
