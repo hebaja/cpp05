@@ -19,6 +19,9 @@ int	main()
 		a.executeForm(*f1);
 		b.executeForm(*f2);
 		c.executeForm(*f3);
+		delete(f1);
+		delete(f2);
+		delete(f3);
 	} catch (std::exception &e) {
 		std::cout << "Error: " << e.what() << std::endl;
 	}
