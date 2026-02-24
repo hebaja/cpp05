@@ -1,7 +1,22 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(std::string name, int grade_sign, int grade_exec) : name(name), is_signed(false), grade_sign(grade_sign), grade_exec(grade_exec) {}
+int check_grade(int grade)
+{
+	if (grade < 1)
+		throw Form::GradeTooHighException();
+	else if (grade > 150)
+		throw Form::GradeTooLowException();
+	else
+		return grade;
+}
+
+Form::Form(std::string name, int grade_sign, int grade_exec) : 
+	name(name), 
+	is_signed(false),
+	grade_sign(check_grade(grade_sign)),
+	grade_exec(check_grade(grade_exec))
+{}
 
 Form::Form() : name("Default"), is_signed(false), grade_sign(150), grade_exec(150) {}
 
