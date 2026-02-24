@@ -1,7 +1,22 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm(std::string name, int grade_sign, int grade_exec) : name(name), is_signed(false), grade_sign(grade_sign), grade_exec(grade_exec) {}
+int check_grade(int grade)
+{
+	if (grade < 1)
+		throw AForm::GradeTooHighException();
+	else if (grade > 150)
+		throw AForm::GradeTooLowException();
+	else
+		return grade;
+}
+
+AForm::AForm(std::string name, int grade_sign, int grade_exec) : 
+	name(name), 
+	is_signed(false),
+	grade_sign(check_grade(grade_sign)),
+	grade_exec(check_grade(grade_exec))
+{}
 
 AForm::AForm() : name("Default"), is_signed(false), grade_sign(150), grade_exec(150) {}
 
@@ -37,15 +52,15 @@ int		AForm::getGradeExec() const
 }
 
 const char	*AForm::GradeTooHighException::what() const throw() {
-	return "GradeTooHighException.";
+	return "AForm::GradeTooHighException.";
 }
 
 const char	*AForm::GradeTooLowException::what() const throw() {
-	return "GradeTooLowException.";
+	return "AForm::GradeTooLowException.";
 }
 
 const char	*AForm::FormNotSignedException::what() const throw() {
-	return "FormNotSignedException.";
+	return "AForm::FormNotSignedException.";
 }
 
 void	AForm::beSigned(Bureaucrat &b)
@@ -68,7 +83,6 @@ void	AForm::allowExec(Bureaucrat const & executor) const
 	{
 		std::cout << executor.getName() << " could not execute " << this->getName() << std::endl;
 		throw AForm::FormNotSignedException();
-		// return (false);
 	}
 	if (executor.getGrade() > this->getGradeExec())
 	{

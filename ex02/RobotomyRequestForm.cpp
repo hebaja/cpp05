@@ -5,7 +5,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target){}
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 42, 45), target("Default"){}
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("Default"){}
 
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
@@ -22,7 +22,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	AForm::allowExec(executor);	
 	std::cout << "drrrr-drrrr-drrrr-drrrr-drrrr-drrrr" << std::endl;
-	std::srand(std::time(0)); //TODO need to check if it's necessary in other cpp versions
+	std::srand(std::time(0));
 	if (std::rand() % 2 == 0)
 		std::cout << executor.getName() << " has been successfully robotomized!" << std::endl;
 	else

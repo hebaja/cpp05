@@ -18,7 +18,7 @@ int	main()
 	/*
 	{
 		try {
-			Bureaucrat a("Andrew", 88);
+			Bureaucrat a("Andrew", 44);
 			RobotomyRequestForm f("robot");
 			a.signForm(f);
 			a.executeForm(f);
