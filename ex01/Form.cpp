@@ -52,11 +52,11 @@ int		Form::getGradeExec() const
 }
 
 const char	*Form::GradeTooHighException::what() const throw() {
-	return "GradeTooHighException.";
+	return "Form::GradeTooHighException.";
 }
 
 const char	*Form::GradeTooLowException::what() const throw() {
-	return "GradeTooLowException.";
+	return "Form::GradeTooLowException.";
 }
 
 void	Form::beSigned(Bureaucrat &b)
